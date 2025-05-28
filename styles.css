@@ -106,3 +106,24 @@ a:hover {
   height: 150px;
   margin-top: 10px;
 }
+.qr-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  margin-bottom: 15px;
+}
+
+.qr-button:hover {
+  background-color: var(--secondary-color);
+}
+
+.qr-container {
+  text-align: center;
+  margin-top: 15px;
+  animation: fadeIn 0.5s ease-out;
+}
