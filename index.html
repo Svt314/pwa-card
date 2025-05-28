@@ -6,43 +6,26 @@
   <title>Моя визитка</title>
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="profile-card">
-    <header class="profile-header">
-      <img src="avatar.png" alt="Моё фото" class="avatar">
-      <h1>СВятослав Алексеевич</h1>
-      <p class="profession">Врач</p>
-    </header>
+  <div class="card">
+    <img src="photo.jpg" alt="Фото" class="photo">
+    <h1>Иван Иванов</h1>
+    <p>Веб-разработчик</p>
     
-    <section class="profile-info">
-      <div class="info-block">
-        <h3>Контакты</h3>
-        <ul class="contacts">
-          <li><a href="mailto:ваш@email.com">bllblbl@email.com</a></li>
-          <li><a href="tel:+79001234567">+7 (XXX) XXX-XX-XX</a></li>
-          <li><a href="https://t.me/Firaniel" target="_blank">Telegram</a></li>
-        </ul>
-      </div>
-      
-      <div class="info-block">
-        <h3>Соцсети</h3>
-        <div class="social-links">
-          <a href="https://github.com/svt314" target="_blank">GitHub</a>
-          <a href="https://linkedin.com/in/ваш_линкедин" target="_blank">LinkedIn</a>
-          <a href="https://ваша_соцсеть" target="_blank">Другая соцсеть</a>
-        </div>
-      </div>
-      
-      <div class="qr-section">
-        <button id="showQrBtn" class="qr-button">Показать QR-код</button>
-        <div id="qrContainer" class="qr-container" style="display: none;">
-          <p>Мой профиль:</p>
-          <img src="github-qr.png" alt="QR код" class="qr-code">
-        </div>
-      </div>
-    </section>
+    <div class="contacts">
+      <a href="mailto:ivan@example.com">ivan@example.com</a><br>
+      <a href="tel:+79001234567">+7 (900) 123-45-67</a><br>
+      <a href="https://t.me/ivan_telegram" target="_blank">Telegram</a><br>
+      <a href="https://github.com/ivan-dev" target="_blank">GitHub</a>
+    </div>
+    
+    <button id="toggleQrBtn" class="qr-btn">Показать QR-код</button>
+    
+    <div id="qrCodeContainer" class="qr-container hidden">
+      <h3>Мой профиль:</h3>
+      <img src="qrcode.png" alt="QR код" class="qr-img">
+    </div>
   </div>
   
   <script src="app.js"></script>
