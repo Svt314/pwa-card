@@ -1,31 +1,23 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // Регистрация Service Worker
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js')
-      .then(registration => {
-        console.log('ServiceWorker зарегистрирован');
-      })
-      .catch(err => {
-        console.log('Ошибка регистрации ServiceWorker: ', err);
-      });
-  }
+document.addEventListener('DOMContentLoaded', function() {
+  const toggleBtn = document.getElementById('toggleQrBtn');
+  const qrContainer = document.getElementById('qrCodeContainer');
   
-  // Обработка кнопки показа QR-кода
-  const qrBtn = document.getElementById('showQrBtn');
-  const qrContainer = document.getElementById('qrContainer');
-  
-  qrBtn.addEventListener('click', () => {
-    if (qrContainer.style.display === 'none') {
-      qrContainer.style.display = 'block';
-      qrBtn.textContent = 'Скрыть QR-код';
+  toggleBtn.addEventListener('click', function() {
+    if (qrContainer.classList.contains('hidden')) {
+      qrContainer.classList.remove('hidden');
+      qrContainer.classList.add('visible');
+      toggleBtn.textContent = 'Скрыть QR-код';
     } else {
-      qrContainer.style.display = 'none';
-      qrBtn.textContent = 'Показать QR-код';
+      qrContainer.classList.remove('visible');
+      qrContainer.classList.add('hidden');
+      toggleBtn.textContent = 'Показать QR-код';
     }
   });
   
-  // Анимация загрузки
-  setTimeout(() => {
-    document.body.classList.add('loaded');
-  }, 200);
+  // Регистрация Service Worker
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+      .then(reg => console.log('SW registered', reg))
+      .catch(err => console.log('SW registration failed', err));
+  }
 });
