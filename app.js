@@ -1,34 +1,42 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const toggleBtn = document.getElementById('toggleQrBtn');
-  const qrContainer = document.getElementById('qrCodeContainer');
+  const qrButton = document.getElementById('qrToggle');
+  const qrContainer = document.getElementById('qrContainer');
   
-  // Проверка существования элементов
-  if (!toggleBtn || !qrContainer) {
-    console.error('Не найдены необходимые элементы на странице!');
+  if (!qrButton || !qrContainer) {
+    console.error('Не найдены необходимые элементы!');
     return;
   }
   
-  toggleBtn.addEventListener('click', function() {
-    // Переключаем видимость
+  qrButton.addEventListener('click', function() {
     const isHidden = qrContainer.classList.contains('hidden');
     
     if (isHidden) {
+      // Показываем QR-код
       qrContainer.classList.remove('hidden');
-      qrContainer.classList.add('visible');
-      toggleBtn.querySelector('.btn-text').textContent = 'Скрыть QR-код';
-      toggleBtn.querySelector('.btn-icon').textContent = '🔲';
+      setTimeout(() => {
+        qrContainer.classList.add('visible');
+      }, 10);
+      
+      // Меняем текст кнопки
+      qrButton.querySelector('.button-text').textContent = 'Скрыть QR-код';
+      qrButton.querySelector('.button-icon').textContent = '👁️‍🗨️';
     } else {
+      // Скрываем QR-код
       qrContainer.classList.remove('visible');
-      qrContainer.classList.add('hidden');
-      toggleBtn.querySelector('.btn-text').textContent = 'Показать QR-код';
-      toggleBtn.querySelector('.btn-icon').textContent = '🔳';
+      setTimeout(() => {
+        qrContainer.classList.add('hidden');
+      }, 500);
+      
+      // Меняем текст кнопки
+      qrButton.querySelector('.button-text').textContent = 'Показать QR-код';
+      qrButton.querySelector('.button-icon').textContent = '👁️';
     }
   });
   
   // Регистрация Service Worker
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js')
-      .then(reg => console.log('Service Worker зарегистрирован', reg))
-      .catch(err => console.error('Ошибка регистрации Service Worker', err));
+      .then(reg => console.log('Service Worker зарегистрирован'))
+      .catch(err => console.error('Ошибка регистрации SW:', err));
   }
 });
