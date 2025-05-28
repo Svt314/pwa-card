@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Визитка</title>
+  <title>Моя визитка</title>
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
   <div class="profile-card">
     <header class="profile-header">
       <img src="avatar.png" alt="Моё фото" class="avatar">
-      <h1>Святослав Алексеевич</h1>
+      <h1>СВятослав Алексеевич</h1>
       <p class="profession">Врач</p>
     </header>
     
@@ -20,7 +20,7 @@
       <div class="info-block">
         <h3>Контакты</h3>
         <ul class="contacts">
-          <li><a href="mailto:ваш@email.com">blbl@email.com</a></li>
+          <li><a href="mailto:ваш@email.com">bllblbl@email.com</a></li>
           <li><a href="tel:+79001234567">+7 (XXX) XXX-XX-XX</a></li>
           <li><a href="https://t.me/Firaniel" target="_blank">Telegram</a></li>
         </ul>
@@ -29,15 +29,18 @@
       <div class="info-block">
         <h3>Соцсети</h3>
         <div class="social-links">
-          <a href="https://github.com/Svt314" target="_blank">GitHub</a>
+          <a href="https://github.com/svt314" target="_blank">GitHub</a>
           <a href="https://linkedin.com/in/ваш_линкедин" target="_blank">LinkedIn</a>
           <a href="https://ваша_соцсеть" target="_blank">Другая соцсеть</a>
         </div>
       </div>
       
       <div class="qr-section">
-        <p>Мой профиль:</p>
-        <img src="github-qr.png" alt="QR код" class="qr-code">
+        <button id="showQrBtn" class="qr-button">Показать QR-код</button>
+        <div id="qrContainer" class="qr-container" style="display: none;">
+          <p>Мой профиль:</p>
+          <img src="github-qr.png" alt="QR код" class="qr-code">
+        </div>
       </div>
     </section>
   </div>
