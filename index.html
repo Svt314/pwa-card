@@ -3,24 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Моя визитка</title>
+  <title>Визитка</title>
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="card">
-    <img src="photo.jpg" alt="Фото" class="photo"> <!-- Изменён путь -->
-    <h1>Иван Иванов</h1>
-    <p>Веб-разработчик</p>
-    <div class="contacts">
-      <a href="mailto:ivan@example.com">ivan@example.com</a><br>
-      <a href="tel:+79001234567">+7 (900) 123-45-67</a><br>
-      <a href="https://t.me/ivan_telegram" target="_blank">Telegram</a><br>
-      <a href="https://github.com/ivan-dev" target="_blank">GitHub</a>
-    </div>
-    <h3>QR-код:</h3>
-    <img src="qrcode.png" alt="QR" class="qr"> <!-- Изменён путь -->
+  <div class="profile-card">
+    <header class="profile-header">
+      <img src="photo.jpg" alt="Моё фото" class="avatar">
+      <h1>Святослав</h1>
+      <p class="profession">Врач</p>
+    </header>
+    
+    <section class="profile-info">
+      <div class="info-block">
+        <h3>Контакты</h3>
+        <ul class="contacts">
+          <li><a href="mailto:ваш@email.com">blbl@email.com</a></li>
+          <li><a href="tel:+79001234567">+7 (XXX) XXX-XX-XX</a></li>
+          <li><a href="https://t.me/Firaniel" target="_blank">Telegram</a></li>
+        </ul>
+      </div>
+      
+      <div class="info-block">
+        <h3>Соцсети</h3>
+        <div class="social-links">
+          <a href="https://github.com/Svt314" target="_blank">GitHub</a>
+        </div>
+      </div>
+      
+      <div class="qr-section">
+        <p>Мой профиль:</p>
+        <img src="qrcode.png" alt="QR код" class="qr-code">
+      </div>
+    </section>
   </div>
+  
   <script src="app.js"></script>
 </body>
 </html>
