@@ -1,14 +1,6 @@
-:root {
-  --primary: #4285f4;
-  --primary-dark: #3367d6;
-  --white: #ffffff;
-  --gray: #f5f5f5;
-  --dark: #333333;
-}
-
 body {
-  font-family: 'Roboto', sans-serif;
-  background: var(--gray);
+  font-family: Arial, sans-serif;
+  background: #f0f2f5;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,14 +10,13 @@ body {
 }
 
 .card {
-  background: var(--white);
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   padding: 30px;
   text-align: center;
-  width: 100%;
   max-width: 400px;
-  position: relative;
+  width: 100%;
 }
 
 .photo {
@@ -33,104 +24,69 @@ body {
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid var(--primary);
+  border: 4px solid #4285f4;
   margin-bottom: 20px;
 }
 
-h1 {
-  margin: 0 0 5px 0;
-  color: var(--dark);
-}
-
-.profession {
-  color: #666;
-  margin: 0 0 25px 0;
-}
-
-.qr-buttons {
+.contacts {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  margin-bottom: 20px;
+  flex-direction: column;
+  gap: 12px;
+  margin: 25px 0;
 }
 
-.qr-btn {
-  background: var(--primary);
+.contact-btn {
+  background: #4285f4;
   color: white;
   border: none;
-  padding: 12px 20px;
-  border-radius: 50px;
-  cursor: pointer;
+  padding: 12px;
+  border-radius: 8px;
   font-size: 16px;
+  cursor: pointer;
   display: flex;
   align-items: center;
-  transition: all 0.3s;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.3s;
 }
 
-.qr-btn:hover {
-  background: var(--primary-dark);
-  transform: translateY(-2px);
+.contact-btn:hover {
+  background: #3367d6;
 }
 
-.btn-icon {
-  margin-right: 8px;
-}
-
-.qr-container {
+.modal {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0,0,0,0.8);
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 100;
 }
 
-.qr-img {
-  max-width: 80%;
-  max-height: 80%;
-  border: 10px solid white;
+.modal-content {
+  background: white;
+  padding: 20px;
   border-radius: 10px;
+  position: relative;
 }
 
-.close-btn {
+.qr-img {
+  width: 200px;
+  height: 200px;
+}
+
+.close {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  background: var(--primary);
-  color: white;
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  top: 10px;
+  right: 15px;
   font-size: 24px;
   cursor: pointer;
 }
 
-.install-container {
-  position: fixed;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-}
-
-.install-btn {
-  background: linear-gradient(135deg, #4a00e0, #8e2de2);
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 50px;
-  font-size: 16px;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
 .hidden {
-  display: none !important;
+  display: none;
 }
