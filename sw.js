@@ -5,7 +5,7 @@ const ASSETS = [
   '/index.html',
   '/styles.css',
   '/app.js',
-  '/avatar.jpg',
+  '/avatar.png',
   '/qr-phone.png',
   '/qr-telegram.png',
   '/qr-vk.png',
