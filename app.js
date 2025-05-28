@@ -1,16 +1,15 @@
-// Регистрация Service Worker с улучшенной обработкой ошибок
 document.addEventListener('DOMContentLoaded', () => {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js')
       .then(registration => {
-        console.log('ServiceWorker registration successful');
+        console.log('ServiceWorker зарегистрирован');
       })
       .catch(err => {
-        console.log('ServiceWorker registration failed: ', err);
+        console.log('Ошибка регистрации ServiceWorker: ', err);
       });
   }
   
-  // Добавляем класс для анимации после загрузки
+  // Анимация загрузки
   setTimeout(() => {
     document.body.classList.add('loaded');
   }, 200);
