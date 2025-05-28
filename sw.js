@@ -8,8 +8,8 @@ const FILES = [
   "app.js",
   "manifest.json",
   "offline.html",
-  "photo.jpg",    // Изменён путь
-  "qrcode.png",   // Изменён путь
+  "avatar.png",    // Изменён путь
+  "github-qr.png",   // Изменён путь
   "icon-192.png", // Изменён путь
   "icon-512.png"  // Изменён путь
 ];
