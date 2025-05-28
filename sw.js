@@ -1,37 +1,57 @@
-const CACHE_NAME = "card-v1";
-const OFFLINE_URL = "offline.html";
-
-const FILES = [
-  "./",           // Важно добавить для GitHub Pages
-  "index.html",
-  "styles.css",
-  "app.js",
-  "manifest.json",
-  "offline.html",
-  "avatar.png",    // Изменён путь
-  "github-qr.png",   // Изменён путь
-  "icon-192.png", // Изменён путь
-  "icon-512.png"  // Изменён путь
+const CACHE_NAME = 'visiting-card-v3';
+const OFFLINE_URL = 'offline.html';
+const PRECACHE_URLS = [
+  './',
+  'index.html',
+  'styles.css',
+  'app.js',
+  'avatar.png',
+  'github-qr.png',
+  'manifest.json',
+  'icons/icon-192x192.png',
+  'icons/icon-512x512.png',
+  OFFLINE_URL
 ];
 
-self.addEventListener("install", e => {
-  e.waitUntil(
+// Установка и кэширование ресурсов
+self.addEventListener('install', event => {
+  event.waitUntil(
     caches.open(CACHE_NAME)
-      .then(c => c.addAll(FILES))
+      .then(cache => {
+        console.log('Кэширование основных ресурсов');
+        return cache.addAll(PRECACHE_URLS);
+      })
       .then(() => self.skipWaiting())
   );
 });
 
-self.addEventListener("fetch", e => {
-  if (e.request.mode === 'navigate') {
-    e.respondWith(
-      fetch(e.request)
+// Активация и очистка старых кэшей
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames.map(cacheName => {
+          if (cacheName !== CACHE_NAME) {
+            console.log('Удаление старого кэша:', cacheName);
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
+    .then(() => self.clients.claim())
+  );
+});
+
+// Стратегия "Сначала кэш, потом сеть" с fallback для оффлайн-режима
+self.addEventListener('fetch', event => {
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request)
         .catch(() => caches.match(OFFLINE_URL))
     );
   } else {
-    e.respondWith(
-      caches.match(e.request)
-        .then(r => r || fetch(e.request))
-    );
+    event.respondWith(
+      caches.match(event.request)
+        .then(response => response || fetch(event.request))
   }
 });
