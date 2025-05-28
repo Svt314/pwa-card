@@ -6,46 +6,48 @@
   <title>Визитка Святослава</title>
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="card">
-    <div class="profile-header">
-      <img src="avatar.png" alt="Фото Святослава" class="photo">
+    <div class="card-content">
+      <img src="avatar.png" alt="Фото Святослава" class="avatar">
       <h1>Святослав Алексеевич</h1>
       <p class="profession">Fullstack разработчик</p>
+      
+      <div class="contacts">
+        <div class="contact-item">
+          <span>📧</span>
+          <a href="mailto:bllkvv@example.com">bllkvv@example.com</a>
+        </div>
+        <div class="contact-item">
+          <span>📱</span>
+          <a href="tel:+79001234567">+7 (900) 123-45-67</a>
+        </div>
+        <div class="contact-item">
+          <span>📲</span>
+          <a href="https://t.me/Firaniel" target="_blank">Telegram</a>
+        </div>
+        <div class="contact-item">
+          <span>💻</span>
+          <a href="https://github.com/svt314" target="_blank">GitHub</a>
+        </div>
+      </div>
+      
+      <button id="qrToggle" class="qr-button">
+        <span class="button-icon">👁️</span>
+        <span class="button-text">Показать QR-код</span>
+      </button>
     </div>
     
-    <div class="contacts">
-      <div class="contact-item">
-        <span class="contact-icon">✉️</span>
-        <a href="mailto:bllkvv@example.com">bllkvv@example.com</a>
+    <div id="qrContainer" class="qr-container hidden">
+      <div class="qr-content">
+        <p>Мой GitHub:</p>
+        <img src="github-qr.png" alt="QR код GitHub" class="qr-code">
       </div>
-      <div class="contact-item">
-        <span class="contact-icon">📱</span>
-        <a href="tel:+79001234567">+7 (900) 123-45-67</a>
-      </div>
-      <div class="contact-item">
-        <span class="contact-icon">📲</span>
-        <a href="https://t.me/Firaniel" target="_blank">Telegram</a>
-      </div>
-      <div class="contact-item">
-        <span class="contact-icon">💻</span>
-        <a href="https://github.com/svt314" target="_blank">GitHub</a>
-      </div>
-    </div>
-    
-    <button id="toggleQrBtn" class="qr-btn">
-      <span class="btn-icon">🔳</span>
-      <span class="btn-text">Показать QR-код</span>
-    </button>
-    
-    <div id="qrCodeContainer" class="qr-container hidden">
-      <p class="qr-caption">Мой GitHub профиль:</p>
-      <img src="github-qr.png" alt="QR код GitHub" class="qr-img">
     </div>
   </div>
-  
+
   <script src="app.js"></script>
 </body>
 </html>
