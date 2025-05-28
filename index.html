@@ -3,45 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Визитка</title>
-  <meta name="theme-color" content="#4285f4">
+  <title>Визитка Святослава</title>
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="card">
-    <img src="avatar.jpg" alt="Мое фото" class="photo">
+    <img src="avatar.jpg" alt="Фото" class="photo">
     <h1>Святослав Алексеевич</h1>
-    <p class="profession">Fullstack разработчик</p>
+    <p>Fullstack разработчик</p>
     
-    <div class="qr-buttons">
-      <button class="qr-btn" data-qr="phone">
-        <span class="btn-icon">📱</span>
-        <span class="btn-text">Телефон</span>
+    <div class="contacts">
+      <button class="contact-btn" data-type="phone">
+        📞 Телефон
       </button>
-      
-      <button class="qr-btn" data-qr="telegram">
-        <span class="btn-icon">✈️</span>
-        <span class="btn-text">Telegram</span>
+      <button class="contact-btn" data-type="telegram">
+        ✈️ Telegram
       </button>
-      
-      <button class="qr-btn" data-qr="vk">
-        <span class="btn-icon">🔵</span>
-        <span class="btn-text">VK</span>
+      <button class="contact-btn" data-type="vk">
+        🔵 VK
       </button>
     </div>
     
-    <div class="qr-container hidden" id="qrContainer">
-      <img id="qrImage" src="" alt="QR код" class="qr-img">
-      <button id="closeQrBtn" class="close-btn">×</button>
+    <div id="qrModal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <img src="github-qr.png" alt="QR код" class="qr-img">
+      </div>
     </div>
-  </div>
-
-  <div class="install-container hidden" id="installContainer">
-    <button id="installBtn" class="install-btn">
-      ⬇️ Установить приложение
-    </button>
   </div>
 
   <script src="app.js"></script>
