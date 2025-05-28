@@ -3,28 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Нет подключения</title>
+  <title>Оффлайн режим</title>
   <style>
     body {
       font-family: 'Roboto', sans-serif;
+      background: #f8f9fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
       text-align: center;
-      padding: 40px 20px;
-      background: #f5f5f5;
-      color: #333;
+    }
+    .offline-card {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
     }
     h1 {
-      color: #d32f2f;
+      color: #4361ee;
     }
-    .offline-icon {
+    .emoji {
       font-size: 60px;
       margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
-  <div class="offline-icon">📶</div>
-  <h1>Нет интернет-соединения</h1>
-  <p>Приложение работает в оффлайн-режиме. Некоторые функции могут быть недоступны.</p>
-  <p>Попробуйте проверить подключение к интернету.</p>
+  <div class="offline-card">
+    <div class="emoji">📶</div>
+    <h1>Оффлайн режим</h1>
+    <p>Сейчас у вас нет интернет-соединения.</p>
+    <p>Основная информация доступна, но некоторые функции могут не работать.</p>
+  </div>
 </body>
 </html>
